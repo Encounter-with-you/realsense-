@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>realsense</title>
+    <link href="realsense.css" rel="stylesheet">
+</head>
+<body  style="text-align: center">
+    <h1>请用手指点击以下圆圈</h1>
+    <canvas id="canv" width="1300px" height="550px" style="background-color: antiquewhite" onclick="showPositon()"></canvas>
+
+
+
+    <script>
+        var can=document.getElementById("canv");
+        var cxt=can.getContext("2d");
+        function drawArc(x,y,color,radius){
+            cxt.fillStyle=color;
+            cxt.beginPath();
+            cxt.arc(x,y,radius,0,2*Math.PI,true);
+            cxt.fill();
+            cxt.closePath();
+        }
+        drawArc(150,50,"red",30);
+        drawArc(450,50,"green",30);
+        drawArc(750,50,"yellow",30);
+        drawArc(1050,50,"blue",30);
+
+        drawArc(150,250,"red",30);
+        drawArc(450,250,"green",30);
+        drawArc(750,250,"yellow",30);
+        drawArc(1050,250,"blue",30);
+
+        drawArc(150,450,"red",30);
+        drawArc(450,450,"green",30);
+        drawArc(750,450,"yellow",30);
+        drawArc(1050,450,"blue",30);
+
+        function showPositon(){
+            alert("x:"+event.screenX+" y:"+event.screenY);
+            console.log("x:"+event.screenX+" y:"+event.screenY);
+        }
+    </script>
+</body>
+</html>
